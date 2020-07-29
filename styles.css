@@ -59,6 +59,14 @@ header{
     background-image: linear-gradient(to bottom, rgba(0,0,0,.5), transparent);
 }
 
+.background-header{
+    width: 100%;
+    height: 100vh;
+    background: url("images/hero.jpg") center no-repeat;
+    background-size: cover;
+}
+
+
 .nav{
     height: 7.2rem;
     display: flex;
@@ -70,8 +78,8 @@ header{
     color: #fff;
     font-size: 2.2rem;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    /*top: 50%;
+    transform: translateY(-50%);*/
     right: 2.5rem;
     cursor: pointer;
     z-index: 1500;
@@ -145,4 +153,36 @@ header{
 
 .nav-link:hover{
     color: var(--secondary-font-color);
+}
+
+/*Hero*/
+.hero{
+    width: 100%;
+    height: calc(100vh - 7.2rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.sub-headline{
+    font-size: 5.4rem;
+    font-family: var(--secondary-font);
+    color: var(--secondary-font-color);
+    font-weight: 100;
+    line-height: .4;
+    letter-spacing: 2px;
+}
+.first-letter{
+    text-transform: uppercase;
+    font-size: 7.3rem;
+}
+.headline{
+    color: #fff;
+    font-size: 2.7rem;
+    font-family: var(--main-font);
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: .2rem;
+    margin-right: .2rem;
 }
