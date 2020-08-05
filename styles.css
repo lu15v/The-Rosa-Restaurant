@@ -23,7 +23,9 @@ html{
     color: var(--body-font-color);
     scroll-behavior: smooth;
 }
-
+body{
+    overflow-x: hidden;
+}
 section{
     padding: 3.9rem 0;
 }
@@ -170,6 +172,9 @@ header{
     font-weight: 100;
     line-height: .4;
     letter-spacing: 2px;
+    opacity: 0;
+    animation: fadeUp .5s forwards;
+    animation-delay: .5s;
 }
 .first-letter{
     text-transform: uppercase;
@@ -178,11 +183,17 @@ header{
 .headline{
     color: #fff;
     font-size: 2.7rem;
+    /*font-size: 3.7rem
+      letter-spacing: .5rem;
+       margin-right: -.5rem;
+    */
     font-family: var(--main-font);
     text-transform: uppercase;
     font-weight: 900;
     letter-spacing: .2rem;
     margin-right: .2rem;
+    animation: scale .5s forwards;
+
 }
 
 .separator{
@@ -197,6 +208,9 @@ header{
     height: .25rem;
     background-color: #fff;
     position: relative;
+    opacity: 0;
+    animation: grow 2s forwards;
+    animation-delay: .9s;
 
 }
 
@@ -206,16 +220,21 @@ header{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    border: .6rem soild transparent;
+    border: .6rem;
+    border-color: transparent;
+    border-style: solid;
+    opacity: 0;
+    animation: grow 2s forwards;
+    animation-delay: 1.2s;
 }
 
 .line-right::before{
-    border-right-color: #fff;
+    border-right: .6rem solid #fff;
     right: 0;
 }
 
 .line-left::before{
-    border-left-color: #fff;
+    border-left: .6rem solid #fff;
     left: 0;
 }
 
@@ -223,6 +242,14 @@ header{
     font-size: 1.2rem;
     color: var(--secondary-font-color);
     margin: 0 1.6rem;
+    animation: spin 1.4s forwards;
+    animation-delay: .3s;
+}
+
+.single-animation{
+    opacity: 0;
+    animation: fadeDown .5s forwards;
+    animation-delay: 1.5s;
 }
 
 .headline-description h5{
@@ -386,10 +413,11 @@ footer{
     color: #fff;
     font-size: 2rem;
     padding: 2rem;
+    animation: up 2s infinite;
 }
 
 .footer-content{
-    /*overflow: hidden; */
+    overflow: hidden;
 }
 
 .footer-content{
@@ -465,6 +493,7 @@ footer{
 @media screen and (min-width: 900px){
     section{
         padding: 7.9rem;
+        overflow: hidden;
     }
 
     .menu-toggle{
@@ -571,5 +600,74 @@ footer{
 
     .newsletter-btn{
         margin-left: 14rem;
+    }
+}
+
+
+/*Animations*/
+
+@keyframes fadeUp{
+    0%{
+        transform: translateY(4rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scale{
+    0%{
+        transform: scale(2);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes grow{
+    0%{
+        width: 0;
+    }
+    100%{
+        opacity: 1;
+        width: 100%;
+    }
+}
+
+@keyframes spin{
+    0%{
+        transform: rotate(-360deg);
+    }
+    90%{
+        transform: rotate(90deg);
+    }
+    100%{
+        opacity: 1;
+        transform: rotate(0);
+    }
+}
+
+@keyframes fadeDown{
+    0%{
+        transform: translateY(-4rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes up{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(-1rem);
     }
 }
